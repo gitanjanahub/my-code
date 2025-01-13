@@ -38,7 +38,7 @@ class AttributeCreate extends Component
             $this->values[] = $this->newValue;
             $this->newValue = ''; // Reset the input field only after adding
 
-            // Log the updated array to Laravel log
+
         // Log::info('Values array after adding new value:', $this->values);
         }
     }
