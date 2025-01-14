@@ -17,6 +17,7 @@ use App\Livewire\Admin\CategoryCreate;
 use App\Livewire\Admin\CategoryEdit;
 use App\Livewire\Admin\CategoryView;
 use App\Livewire\Admin\ChangePassword;
+use App\Livewire\Admin\Contactus;
 use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\StaffDashboard;
 use App\Livewire\Admin\Login;
@@ -36,6 +37,7 @@ use App\Livewire\Admin\UserCreate;
 use App\Livewire\Admin\UserEdit;
 use App\Livewire\Admin\Users;
 use App\Livewire\Admin\UserView;
+use App\Livewire\Admin\ContactDetails;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -88,6 +90,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/banners/{bannerId}', BannerView::class)->name('admin.banner-view');
 
     Route::get('/admin/change-password', ChangePassword::class)->name('admin.change-password');
+    Route::get('admin/contact-details', ContactDetails::class)->name('admin.contact-details');
 
 
     Route::get('admin/logout', function () {

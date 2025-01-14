@@ -4,10 +4,11 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="">Contact</a>
+                    <a wire:navigate href="/contac-tus" class="text-body mr-3" href="">Contact</a>
+
+                    {{-- <a class="text-body mr-3" href="">About</a>
                     <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
+                    <a class="text-body mr-3" href="">FAQs</a> --}}
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -71,10 +72,14 @@
                     </div>
                 </form>
             </div>
+            @if ($contactDetail && $contactDetail->phone)
             <div class="col-lg-4 col-6 text-right">
                 <p class="m-0">Customer Service</p>
-                <h5 class="m-0">+012 345 6789</h5>
+                <h5 class="m-0">
+                        {{ $contactDetail->phone }}
+                </h5>
             </div>
+            @endif
         </div>
     </div>
     <!-- Topbar End -->

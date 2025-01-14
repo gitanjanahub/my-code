@@ -8,6 +8,7 @@ use App\Livewire\CancelPage;
 use App\Livewire\CartPage;
 use App\Livewire\CategoriesPage;
 use App\Livewire\CheckoutPage;
+use App\Livewire\ContactusPage;
 use App\Livewire\HomePage;
 use App\Livewire\MyOrderDetailsPage;
 use App\Livewire\MyOrdersPage;
@@ -36,6 +37,7 @@ Route::get('/products',ProductsPage::class);
 Route::get('/cart',CartPage::class);
 Route::get('/products/{slug}',ProductDetailsPage::class);
 Route::get('/wishlist',WishListPage::class);
+Route::get('/contac-tus',ContactusPage::class);
 
 
 //Route::get('/checkout',CheckoutPage::class);

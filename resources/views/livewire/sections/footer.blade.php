@@ -4,10 +4,12 @@
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                {{-- <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p> --}}
+                @if ($contactDetail)
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>{{ $contactDetail->address }}</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>{{ $contactDetail->email }}</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>{{ $contactDetail->phone }}</p>
+                @endif
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
@@ -24,11 +26,17 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a wire:navigate class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a wire:navigate class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>My Orders</a>
+                            <a wire:navigate class="text-secondary mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            @auth
+                            <a wire:navigate class="text-secondary mb-2" href="/my-orders"><i class="fa fa-angle-right mr-2"></i>My Orders</a>
+                            @endauth
+                            @guest
+                                <a wire:navigate href="/login" class="text-secondary mb-2"><i class="fa fa-angle-right mr-2"></i>Log In</a>
+                                <a wire:navigate href="/register" class="text-secondary mb-2"><i class="fa fa-angle-right mr-2"></i>Sign Up</a>
+                            @endguest
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
+                    {{-- <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
                         <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
                         <form action="">
@@ -46,7 +54,7 @@
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

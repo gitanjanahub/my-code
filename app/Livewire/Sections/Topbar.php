@@ -3,6 +3,7 @@
 namespace App\Livewire\Sections;
 
 use App\Helpers\CartManagement;
+use App\Models\ContactDetail;
 use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -16,12 +17,16 @@ class Topbar extends Component
 
     public $search = '';
 
+    public $contactDetail;
+
     public function mount()
     {
         $this->updateCartCount();
         $this->updateWishlistCount();
         // Initialize the search query from the URL if present
         $this->search = request()->query('search', '');
+
+        $this->contactDetail = ContactDetail::first();
     }
 
     public function updateCartCount()
