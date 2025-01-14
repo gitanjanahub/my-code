@@ -109,6 +109,15 @@
                             <p>Users</p>
                         </a>
                     </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a wire:navigate href="{{ route('admin.contact-details') }}"
+                           class="nav-link {{ request()->is('admin/contact-details') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-image"></i>
+                            <p>Contact Us</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
